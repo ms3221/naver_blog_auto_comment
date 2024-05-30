@@ -62,6 +62,10 @@ def get_gif_urls() -> list[str]:
         options = Options()
         options.add_argument("--no-sandbox")
         options.add_argument("--window-size=1800,1000")
+        options.add_argument("disable-blink-features=AutomationControlled")
+        options.add_argument(
+            "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+        )
 
         driver = webdriver.Chrome(options=options)
 
@@ -110,12 +114,12 @@ texts.forEach(function(text) {
         driver.execute_script(script, texts)
         driver.switch_to.default_content()
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(5)
+        time.sleep(2)
 
         button = find_position_by_image(change_path("image/submit.png"))
-
-        pyautogui.click(button["x"], button["y"], 3)
-        time.sleep(10)
+        pyautogui.moveTo(button["x"], button["y"], 1)
+        pyautogui.click(button["x"], button["y"])
+        time.sleep(3)
 
         # 4가지 행동을 해야함
 
