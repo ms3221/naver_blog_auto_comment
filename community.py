@@ -66,6 +66,7 @@ def get_gif_urls() -> list[str]:
         options.add_argument(
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
         )
+        options.add_experimental_option("debuggerAddress", "localhost:9222")
 
         driver = webdriver.Chrome(options=options)
 
