@@ -1,0 +1,509 @@
+[
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "Service",
+        "importPath": "selenium.webdriver.chrome.service",
+        "description": "selenium.webdriver.chrome.service",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.service",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "Options",
+        "importPath": "selenium.webdriver.chrome.options",
+        "description": "selenium.webdriver.chrome.options",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.options",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "time,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time.",
+        "description": "time.",
+        "detail": "time.",
+        "documentation": {}
+    },
+    {
+        "label": "pyautogui",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyautogui",
+        "description": "pyautogui",
+        "detail": "pyautogui",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "messagebox",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "messagebox",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "messagebox",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "Keys",
+        "importPath": "selenium.webdriver.common.keys",
+        "description": "selenium.webdriver.common.keys",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.keys",
+        "documentation": {}
+    },
+    {
+        "label": "Keys",
+        "importPath": "selenium.webdriver.common.keys",
+        "description": "selenium.webdriver.common.keys",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.keys",
+        "documentation": {}
+    },
+    {
+        "label": "os,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.",
+        "description": "os.",
+        "detail": "os.",
+        "documentation": {}
+    },
+    {
+        "label": "win32com.client",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "win32com.client",
+        "description": "win32com.client",
+        "detail": "win32com.client",
+        "documentation": {}
+    },
+    {
+        "label": "pythoncom",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pythoncom",
+        "description": "pythoncom",
+        "detail": "pythoncom",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "customtkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "customtkinter",
+        "description": "customtkinter",
+        "detail": "customtkinter",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "win32gui,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "win32gui.",
+        "description": "win32gui.",
+        "detail": "win32gui.",
+        "documentation": {}
+    },
+    {
+        "label": "win32con",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "win32con",
+        "description": "win32con",
+        "detail": "win32con",
+        "documentation": {}
+    },
+    {
+        "label": "auto_blog_comment",
+        "importPath": "naver_login",
+        "description": "naver_login",
+        "isExtraImport": true,
+        "detail": "naver_login",
+        "documentation": {}
+    },
+    {
+        "label": "excel_export",
+        "importPath": "excel",
+        "description": "excel",
+        "isExtraImport": true,
+        "detail": "excel",
+        "documentation": {}
+    },
+    {
+        "label": "get_absolute_path",
+        "importPath": "excel",
+        "description": "excel",
+        "isExtraImport": true,
+        "detail": "excel",
+        "documentation": {}
+    },
+    {
+        "label": "excel_read",
+        "importPath": "excel",
+        "description": "excel",
+        "isExtraImport": true,
+        "detail": "excel",
+        "documentation": {}
+    },
+    {
+        "label": "get_crawling_site",
+        "importPath": "crawl_site",
+        "description": "crawl_site",
+        "isExtraImport": true,
+        "detail": "crawl_site",
+        "documentation": {}
+    },
+    {
+        "label": "site_login",
+        "importPath": "crawl_site",
+        "description": "crawl_site",
+        "isExtraImport": true,
+        "detail": "crawl_site",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "pyperclip",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyperclip",
+        "description": "pyperclip",
+        "detail": "pyperclip",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "get_absolute_path",
+        "kind": 2,
+        "importPath": "community",
+        "description": "community",
+        "peekOfCode": "def get_absolute_path(file_path):\n    return os.path.join(current_directory, file_path)\ndef change_path(img_path):\n    n = np.fromfile(get_absolute_path(img_path), np.uint8)\n    return [cv2.imdecode(n, cv2.IMREAD_GRAYSCALE), img_path]\ndef find_position_by_image(img_path, max_attempts=10):\n    print(img_path, \"1\")\n    [byte_path, img_path] = img_path\n    print(byte_path)\n    current_attempt = 0",
+        "detail": "community",
+        "documentation": {}
+    },
+    {
+        "label": "change_path",
+        "kind": 2,
+        "importPath": "community",
+        "description": "community",
+        "peekOfCode": "def change_path(img_path):\n    n = np.fromfile(get_absolute_path(img_path), np.uint8)\n    return [cv2.imdecode(n, cv2.IMREAD_GRAYSCALE), img_path]\ndef find_position_by_image(img_path, max_attempts=10):\n    print(img_path, \"1\")\n    [byte_path, img_path] = img_path\n    print(byte_path)\n    current_attempt = 0\n    # 대기 시간 설정 (초)\n    wait_time = 2",
+        "detail": "community",
+        "documentation": {}
+    },
+    {
+        "label": "find_position_by_image",
+        "kind": 2,
+        "importPath": "community",
+        "description": "community",
+        "peekOfCode": "def find_position_by_image(img_path, max_attempts=10):\n    print(img_path, \"1\")\n    [byte_path, img_path] = img_path\n    print(byte_path)\n    current_attempt = 0\n    # 대기 시간 설정 (초)\n    wait_time = 2\n    while current_attempt < max_attempts:\n        print(current_attempt)\n        try:",
+        "detail": "community",
+        "documentation": {}
+    },
+    {
+        "label": "get_gif_urls",
+        "kind": 2,
+        "importPath": "community",
+        "description": "community",
+        "peekOfCode": "def get_gif_urls() -> list[str]:\n    print(\"here \")\n    try:\n        options = Options()\n        options.add_argument(\"--no-sandbox\")\n        options.add_argument(\"--window-size=1800,1000\")\n        options.add_argument(\"disable-blink-features=AutomationControlled\")\n        options.add_argument(\n            \"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\"\n        )",
+        "detail": "community",
+        "documentation": {}
+    },
+    {
+        "label": "current_directory",
+        "kind": 5,
+        "importPath": "community",
+        "description": "community",
+        "peekOfCode": "current_directory = os.path.dirname(os.path.abspath(__file__))\ndef get_absolute_path(file_path):\n    return os.path.join(current_directory, file_path)\ndef change_path(img_path):\n    n = np.fromfile(get_absolute_path(img_path), np.uint8)\n    return [cv2.imdecode(n, cv2.IMREAD_GRAYSCALE), img_path]\ndef find_position_by_image(img_path, max_attempts=10):\n    print(img_path, \"1\")\n    [byte_path, img_path] = img_path\n    print(byte_path)",
+        "detail": "community",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "crawl_site",
+        "description": "crawl_site",
+        "peekOfCode": "def login():\n    options = webdriver.ChromeOptions()\n    options.add_argument(\"window-size=1920x1080\")\n    driver = webdriver.Chrome()\n    # 크롬 드라이버에 url 주소 넣고 실행\n    driver.get(\"https://www.naver.com\")\n    # 페이지가 완전히 로딩되도록 3초동안 기다림\n    time.sleep(20)\n    driver.quit()\ndef site_login(id, pwd, message, excel_data):",
+        "detail": "crawl_site",
+        "documentation": {}
+    },
+    {
+        "label": "site_login",
+        "kind": 2,
+        "importPath": "crawl_site",
+        "description": "crawl_site",
+        "peekOfCode": "def site_login(id, pwd, message, excel_data):\n    try:\n        options = webdriver.ChromeOptions()\n        options.add_argument(\"window-size=1920x1080\")\n        driver = webdriver.Chrome()\n        # 크롬 드라이버에 url 주소 넣고 실행\n        driver.get(\"https://www.allin42.com/notice\")\n        driver.maximize_window()\n        # 페이지가 완전히 로딩되도록 3초동안 기다림\n        id_input = driver.find_element(",
+        "detail": "crawl_site",
+        "documentation": {}
+    },
+    {
+        "label": "get_crawling_site",
+        "kind": 2,
+        "importPath": "crawl_site",
+        "description": "crawl_site",
+        "peekOfCode": "def get_crawling_site(id, pwd, start, end):\n    nickname_list = []\n    options = webdriver.ChromeOptions()\n    options.add_argument(\"window-size=1920x1080\")\n    driver = webdriver.Chrome()\n    # 크롬 드라이버에 url 주소 넣고 실행\n    driver.get(\"https://www.allin42.com/notice\")\n    driver.maximize_window()\n    id_input = driver.find_element(\n        By.CSS_SELECTOR,",
+        "detail": "crawl_site",
+        "documentation": {}
+    },
+    {
+        "label": "get_absolute_path",
+        "kind": 2,
+        "importPath": "excel",
+        "description": "excel",
+        "peekOfCode": "def get_absolute_path(file_path):\n    return os.path.join(current_directory, file_path)\nexcel_filename = get_absolute_path(\"excel/export.xlsx\")\ndef excel_export(data):\n    # 새로운 Excel 워크북 생성\n    workbook = openpyxl.Workbook()\n    # 현재 활성화된 시트 선택\n    sheet = workbook.active\n    # 이차원 배열 데이터를 시트에 추가\n    for row in data:",
+        "detail": "excel",
+        "documentation": {}
+    },
+    {
+        "label": "excel_export",
+        "kind": 2,
+        "importPath": "excel",
+        "description": "excel",
+        "peekOfCode": "def excel_export(data):\n    # 새로운 Excel 워크북 생성\n    workbook = openpyxl.Workbook()\n    # 현재 활성화된 시트 선택\n    sheet = workbook.active\n    # 이차원 배열 데이터를 시트에 추가\n    for row in data:\n        sheet.append(row)\n    # Excel 파일 저장\n    workbook.save(excel_filename)",
+        "detail": "excel",
+        "documentation": {}
+    },
+    {
+        "label": "update_xlsx_row",
+        "kind": 2,
+        "importPath": "excel",
+        "description": "excel",
+        "peekOfCode": "def update_xlsx_row(excel_path, row_index, row_data):\n    # close_specific_excel_workbook(\"live.xlsx\")\n    workbook = openpyxl.load_workbook(excel_path)\n    sheet = workbook.active\n    for col, el in enumerate(row_data, start=1):\n        sheet.cell(row=row_index, column=col, value=el)\n    workbook.save(excel_path)\n    print(f\"{row_index}행 업데이트 완료\")\n    workbook.close()\ndef excel_read(file_path):",
+        "detail": "excel",
+        "documentation": {}
+    },
+    {
+        "label": "excel_read",
+        "kind": 2,
+        "importPath": "excel",
+        "description": "excel",
+        "peekOfCode": "def excel_read(file_path):\n    # 엑셀 파일 읽기\n    df = pd.read_excel(file_path, sheet_name=0, na_values=\"\")\n    # 데이터프레임을 리스트로 변환\n    all_data = df.fillna(\"\").values.tolist()\n    # 결과 출력\n    return all_data",
+        "detail": "excel",
+        "documentation": {}
+    },
+    {
+        "label": "current_directory",
+        "kind": 5,
+        "importPath": "excel",
+        "description": "excel",
+        "peekOfCode": "current_directory = os.path.dirname(os.path.abspath(__file__))\ndef get_absolute_path(file_path):\n    return os.path.join(current_directory, file_path)\nexcel_filename = get_absolute_path(\"excel/export.xlsx\")\ndef excel_export(data):\n    # 새로운 Excel 워크북 생성\n    workbook = openpyxl.Workbook()\n    # 현재 활성화된 시트 선택\n    sheet = workbook.active\n    # 이차원 배열 데이터를 시트에 추가",
+        "detail": "excel",
+        "documentation": {}
+    },
+    {
+        "label": "excel_filename",
+        "kind": 5,
+        "importPath": "excel",
+        "description": "excel",
+        "peekOfCode": "excel_filename = get_absolute_path(\"excel/export.xlsx\")\ndef excel_export(data):\n    # 새로운 Excel 워크북 생성\n    workbook = openpyxl.Workbook()\n    # 현재 활성화된 시트 선택\n    sheet = workbook.active\n    # 이차원 배열 데이터를 시트에 추가\n    for row in data:\n        sheet.append(row)\n    # Excel 파일 저장",
+        "detail": "excel",
+        "documentation": {}
+    },
+    {
+        "label": "App",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class App(customtkinter.CTk):\n    def __init__(self):\n        super().__init__()\n        self.message = \"\"\"\n    안녕하세요 지치신 사장님 위해서 \n    연락드렸습니다.\n    대화한번 해보시죠\n    텔@ssrr119 연락주세요\n                \"\"\"\n        self.title(\"악마의 게임\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "bring_to_front",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def bring_to_front(window_title):\n    def enum_windows_callback(hwnd, titles):\n        if win32gui.IsWindowVisible(hwnd) and window_title in win32gui.GetWindowText(\n            hwnd\n        ):\n            titles.append(hwnd)\n    titles = []\n    win32gui.EnumWindows(enum_windows_callback, titles)\n    if titles:\n        hwnd = titles[0]  # 가장 첫 번째 찾은 윈도우의 핸들을 가져옵니다.",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "check_single_instance",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def check_single_instance():\n    # 사용할 포트 번호를 선택합니다. 이 포트는 앱 전용으로 사용되어야 합니다.\n    port = 3007\n    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    try:\n        sock.bind((\"127.0.0.1\", port))\n        print(\"app start at 3005port\")\n        app = App()\n        app.mainloop()\n    except socket.error:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_absolute_path",
+        "kind": 2,
+        "importPath": "naver_login",
+        "description": "naver_login",
+        "peekOfCode": "def get_absolute_path(file_path):\n    return os.path.join(current_directory, file_path)\ndef site_login():\n    options = webdriver.ChromeOptions()\n    options.add_argument(\"window-size=1920x1080\")\n    driver = webdriver.Chrome()\n    # 크롬 드라이버에 url 주소 넣고 실행\n    driver.get(\"https://www.allin42.com/notice\")\n    driver.maximize_window()\n    # 페이지가 완전히 로딩되도록 3초동안 기다림",
+        "detail": "naver_login",
+        "documentation": {}
+    },
+    {
+        "label": "site_login",
+        "kind": 2,
+        "importPath": "naver_login",
+        "description": "naver_login",
+        "peekOfCode": "def site_login():\n    options = webdriver.ChromeOptions()\n    options.add_argument(\"window-size=1920x1080\")\n    driver = webdriver.Chrome()\n    # 크롬 드라이버에 url 주소 넣고 실행\n    driver.get(\"https://www.allin42.com/notice\")\n    driver.maximize_window()\n    # 페이지가 완전히 로딩되도록 3초동안 기다림\n    id_input = driver.find_element(\n        By.CSS_SELECTOR,",
+        "detail": "naver_login",
+        "documentation": {}
+    },
+    {
+        "label": "auto_blog_comment",
+        "kind": 2,
+        "importPath": "naver_login",
+        "description": "naver_login",
+        "peekOfCode": "def auto_blog_comment(blogUrl: str, comment=\"blog 잘보고 갑니다.\"):\n    blog_no = blogUrl.split(\"/\")[-1]\n    print(blog_no)\n    options = webdriver.ChromeOptions()\n    options.add_argument(\"disable-blink-features=AutomationControlled\")\n    options.add_argument(\n        \"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36\"\n    )\n    options.add_experimental_option(\"excludeSwitches\", [\"enable-automation\"])\n    options.add_experimental_option(\"useAutomationExtension\", False)",
+        "detail": "naver_login",
+        "documentation": {}
+    },
+    {
+        "label": "current_directory",
+        "kind": 5,
+        "importPath": "naver_login",
+        "description": "naver_login",
+        "peekOfCode": "current_directory = os.path.dirname(os.path.abspath(__file__))\ndef get_absolute_path(file_path):\n    return os.path.join(current_directory, file_path)\ndef site_login():\n    options = webdriver.ChromeOptions()\n    options.add_argument(\"window-size=1920x1080\")\n    driver = webdriver.Chrome()\n    # 크롬 드라이버에 url 주소 넣고 실행\n    driver.get(\"https://www.allin42.com/notice\")\n    driver.maximize_window()",
+        "detail": "naver_login",
+        "documentation": {}
+    }
+]
