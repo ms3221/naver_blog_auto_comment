@@ -1,26 +1,25 @@
 import customtkinter
 import os
+import pyautogui
+import time
 from tkinter import messagebox
 import socket
-import win32gui, shutil
-import win32con
+import shutil
+import subprocess
 from naver_login import auto_blog_comment
 from excel import excel_export, get_absolute_path, excel_read
 from crawl_site import get_crawling_site, site_login
 from datetime import datetime
 from tkinter import messagebox
+from community import get_gif_urls
 
 
 class App(customtkinter.CTk):
+   
 
     def __init__(self):
         super().__init__()
-        self.message = """
-    안녕하세요 지치신 사장님 위해서 
-    연락드렸습니다.
-    대화한번 해보시죠
-    텔@ssrr119 연락주세요
-                """
+        self.message = """ """
 
         self.title("악마의 게임")
         self.geometry("560x780")
@@ -30,7 +29,7 @@ class App(customtkinter.CTk):
             height=40,
             width=240,
             border_spacing=10,
-            text="닉네임 데이터 추출",
+            text="글 작성하기",
             text_color=("gray10", "gray90"),
             hover_color=("gray70", "gray30"),
             command=self.save_data_by_crawling_data,
@@ -42,47 +41,39 @@ class App(customtkinter.CTk):
             height=40,
             width=240,
             border_spacing=10,
-            text="쪽지 보내기",
+            text="----",
             fg_color="gray",
             text_color=("gray10", "gray90"),
             hover_color=("gray70", "gray30"),
-            command=self.message_to_nickname,
+            command=self.find_position
+            
         )
         self.upload_button.grid(row=6, column=1, sticky="e", padx=10, pady=(10, 0))
 
-        self.url_label = customtkinter.CTkLabel(self, text="ID")
-        self.url_label.grid(
-            row=0, column=0, columnspan=2, sticky="nsew", pady=5, padx=10
-        )
-        self.id_entry = customtkinter.CTkEntry(self, fg_color="lightgray")
-        self.id_entry.grid(
-            row=1, column=0, columnspan=2, sticky="nsew", pady=2, padx=10
-        )
+        
 
-        self.comment_label = customtkinter.CTkLabel(self, text="PWD")
-        self.comment_label.grid(
-            row=2, column=0, columnspan=2, sticky="nsew", pady=5, padx=10
-        )
-        self.pwd_entry = customtkinter.CTkEntry(self, fg_color="lightgray")
-        self.pwd_entry.grid(
-            row=3, column=0, columnspan=2, sticky="nsew", pady=2, padx=10
-        )
+       
+        self.title_label = customtkinter.CTkLabel(self, text="제목")
+        self.title_label.grid(row=0, column=0,columnspan=2, sticky="nsew", pady=5, padx=10)
+        self.title_entry = customtkinter.CTkEntry(self, fg_color="pink", text_color='black')
+        self.title_entry.grid(row=1, column=0,columnspan=2, sticky="nsew", pady=2, padx=10)
 
-        self.start_index_label = customtkinter.CTkLabel(self, text="시작 페이지")
-        self.start_index_label.grid(row=4, column=0, sticky="w", pady=5, padx=10)
-        self.start_index_entry = customtkinter.CTkEntry(self, fg_color="lightgray")
-        self.start_index_entry.grid(row=5, column=0, sticky="w", pady=2, padx=10)
-
-        self.end_index_label = customtkinter.CTkLabel(self, text="마지막 페이지")
-        self.end_index_label.grid(row=4, column=1, sticky="w", pady=5, padx=10)
-        self.end_index_entry = customtkinter.CTkEntry(self, fg_color="lightgray")
-        self.end_index_entry.grid(row=5, column=1, sticky="w", pady=2, padx=10)
-
+        self.message_box_label = customtkinter.CTkLabel(self, text="내용 박스")
+        self.message_box_label.grid(row=2, column=0,columnspan=2, sticky="nsew", pady=5, padx=10)
         self.message_box = customtkinter.CTkTextbox(self)
         self.message_box.grid(
-            row=7, column=0, columnspan=2, sticky="nsew", pady=10, padx=10
+            row=3, column=0, columnspan=2, sticky="nsew", pady=10, padx=10
         )
         self.message_box.insert("end", self.message)
+
+
+        self.url_box_label = customtkinter.CTkLabel(self, text="url 박스")
+        self.url_box_label.grid(row=4, column=0,columnspan=2, sticky="nsew", pady=5, padx=10)
+        self.url_box = customtkinter.CTkTextbox(self)
+        self.url_box.grid(
+            row=5, column=0, columnspan=2, sticky="nsew", pady=10, padx=10
+        )
+        self.url_box.insert("end", self.message)
 
     # def start_blog_comment(self):
     #     self.url = self.url_text.get("1.0", "end")
@@ -112,48 +103,39 @@ class App(customtkinter.CTk):
             messagebox.showerror("메시지 실패", "쪽지보내는데 실패했습니다.")
             print(e)
 
-    # 로그인데 세션을 들고 싸이트에 로그인한다
+    # 로그인데 세션을 들고 싸이트에 로그인한다 
 
     # for문을 돌려서 껏다켯다 하지말고 하나 띄어놓고
     # 계속해서 문자를 보내는 형태로 진행한다.
     def save_data_by_crawling_data(self):
         try:
-            id = self.id_entry.get()
-            pwd = self.pwd_entry.get()
-            start_index = self.start_index_entry.get()
-            end_index = self.end_index_entry.get()
-            if os.path.exists(get_absolute_path("excel")):
-                shutil.rmtree(get_absolute_path("excel"))
-                os.mkdir(get_absolute_path("excel"))
-            head = [["no", "nickname", "수집날짜"]]
-            excel_path = get_absolute_path("excel/export.xlsx")
-            nickname_list = get_crawling_site(id, pwd, start_index, end_index)
-            for index, nickname in enumerate(nickname_list, start=1):
-                head.append([index, nickname, datetime.today().strftime("%Y/%m/%d")])
-            excel_export(head)
-            messagebox.showinfo(
-                "추출 성공 메시지", f"데이터 추출에 성공했습니다.총{len(head)}개"
-            )
-        except Exception as e:
-            messagebox.showerror("추출 실패 메시지", "데이터 추출에 실패했습니다.")
+            message = self.message_box.get("1.0", "end-1c")
+            messageList = message.split('\n')
+            urls = self.url_box.get("1.0", "end-1c")
+            urlList = urls.split('\n')
+            title = self.title_entry.get()
+            print(messageList, urlList, title)
+            for index, key in enumerate(urlList):
+                
+                get_gif_urls(key,messageList, title)
+
+            
+        except Exception as e: 
             print(e)
 
     # 성공 및 실패했을경우에 대해서 생각해야 한다.
 
+    def find_position(self):
+        try:
+            while True:
+                x , y = pyautogui.position()
+                print(f"현재 마우스 포인터의 좌표: ({x}, {y})", end='\r')
+                time.sleep(0.1)  # 0.1초마다 업데이트
+        except KeyboardInterrupt:
+            print("\n프로그램 종료")
 
-def bring_to_front(window_title):
-    def enum_windows_callback(hwnd, titles):
-        if win32gui.IsWindowVisible(hwnd) and window_title in win32gui.GetWindowText(
-            hwnd
-        ):
-            titles.append(hwnd)
 
-    titles = []
-    win32gui.EnumWindows(enum_windows_callback, titles)
-    if titles:
-        hwnd = titles[0]  # 가장 첫 번째 찾은 윈도우의 핸들을 가져옵니다.
-        win32gui.SetForegroundWindow(hwnd)
-        win32gui.ShowWindow(hwnd, win32con.SW_RESTORE)
+
 
 
 def check_single_instance():
@@ -174,4 +156,9 @@ def check_single_instance():
 
 
 if __name__ == "__main__":
+    # command = r'/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir="/tmp/chrome_dev_session"'
+    # subprocess.run을 사용하여 명령어를 실행합니다.
+    # subprocess.Popen(command, shell=True)
+    
     check_single_instance()
+   

@@ -96,6 +96,14 @@
         "documentation": {}
     },
     {
+        "label": "ActionChains",
+        "importPath": "selenium.webdriver.common.action_chains",
+        "description": "selenium.webdriver.common.action_chains",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.action_chains",
+        "documentation": {}
+    },
+    {
         "label": "time,",
         "kind": 6,
         "isExtraImport": true,
@@ -172,24 +180,6 @@
         "documentation": {}
     },
     {
-        "label": "win32com.client",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "win32com.client",
-        "description": "win32com.client",
-        "detail": "win32com.client",
-        "documentation": {}
-    },
-    {
-        "label": "pythoncom",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pythoncom",
-        "description": "pythoncom",
-        "detail": "pythoncom",
-        "documentation": {}
-    },
-    {
         "label": "pandas",
         "kind": 6,
         "isExtraImport": true,
@@ -217,6 +207,15 @@
         "documentation": {}
     },
     {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
         "label": "socket",
         "kind": 6,
         "isExtraImport": true,
@@ -226,21 +225,21 @@
         "documentation": {}
     },
     {
-        "label": "win32gui,",
+        "label": "shutil",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "win32gui.",
-        "description": "win32gui.",
-        "detail": "win32gui.",
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
         "documentation": {}
     },
     {
-        "label": "win32con",
+        "label": "subprocess",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "win32con",
-        "description": "win32con",
-        "detail": "win32con",
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
         "documentation": {}
     },
     {
@@ -300,6 +299,14 @@
         "documentation": {}
     },
     {
+        "label": "get_gif_urls",
+        "importPath": "community",
+        "description": "community",
+        "isExtraImport": true,
+        "detail": "community",
+        "documentation": {}
+    },
+    {
         "label": "pyperclip",
         "kind": 6,
         "isExtraImport": true,
@@ -322,7 +329,7 @@
         "kind": 2,
         "importPath": "community",
         "description": "community",
-        "peekOfCode": "def get_absolute_path(file_path):\n    return os.path.join(current_directory, file_path)\ndef change_path(img_path):\n    n = np.fromfile(get_absolute_path(img_path), np.uint8)\n    return [cv2.imdecode(n, cv2.IMREAD_GRAYSCALE), img_path]\ndef find_position_by_image(img_path, max_attempts=10):\n    print(img_path, \"1\")\n    [byte_path, img_path] = img_path\n    print(byte_path)\n    current_attempt = 0",
+        "peekOfCode": "def get_absolute_path(file_path):\n    return os.path.join(current_directory, file_path)\ndef change_path(img_path):\n    n = np.fromfile(get_absolute_path(img_path), np.uint8)\n    return [cv2.imdecode(n, cv2.IMREAD_GRAYSCALE), img_path]\ndef find_position_by_image(img_path, max_attempts=10):\n    current_attempt = 0\n    # 대기 시간 설정 (초)\n    wait_time = 2\n    while current_attempt < max_attempts:",
         "detail": "community",
         "documentation": {}
     },
@@ -331,7 +338,7 @@
         "kind": 2,
         "importPath": "community",
         "description": "community",
-        "peekOfCode": "def change_path(img_path):\n    n = np.fromfile(get_absolute_path(img_path), np.uint8)\n    return [cv2.imdecode(n, cv2.IMREAD_GRAYSCALE), img_path]\ndef find_position_by_image(img_path, max_attempts=10):\n    print(img_path, \"1\")\n    [byte_path, img_path] = img_path\n    print(byte_path)\n    current_attempt = 0\n    # 대기 시간 설정 (초)\n    wait_time = 2",
+        "peekOfCode": "def change_path(img_path):\n    n = np.fromfile(get_absolute_path(img_path), np.uint8)\n    return [cv2.imdecode(n, cv2.IMREAD_GRAYSCALE), img_path]\ndef find_position_by_image(img_path, max_attempts=10):\n    current_attempt = 0\n    # 대기 시간 설정 (초)\n    wait_time = 2\n    while current_attempt < max_attempts:\n        print(current_attempt)\n        try:",
         "detail": "community",
         "documentation": {}
     },
@@ -340,7 +347,7 @@
         "kind": 2,
         "importPath": "community",
         "description": "community",
-        "peekOfCode": "def find_position_by_image(img_path, max_attempts=10):\n    print(img_path, \"1\")\n    [byte_path, img_path] = img_path\n    print(byte_path)\n    current_attempt = 0\n    # 대기 시간 설정 (초)\n    wait_time = 2\n    while current_attempt < max_attempts:\n        print(current_attempt)\n        try:",
+        "peekOfCode": "def find_position_by_image(img_path, max_attempts=10):\n    current_attempt = 0\n    # 대기 시간 설정 (초)\n    wait_time = 2\n    while current_attempt < max_attempts:\n        print(current_attempt)\n        try:\n            print(img_path)\n            # 이미지를 찾고    좌표를 가져옵니다.\n            button_png = pyautogui.locateOnScreen(",
         "detail": "community",
         "documentation": {}
     },
@@ -349,7 +356,7 @@
         "kind": 2,
         "importPath": "community",
         "description": "community",
-        "peekOfCode": "def get_gif_urls() -> list[str]:\n    print(\"here \")\n    try:\n        options = Options()\n        options.add_argument(\"--no-sandbox\")\n        options.add_argument(\"--window-size=1800,1000\")\n        options.add_argument(\"disable-blink-features=AutomationControlled\")\n        options.add_argument(\n            \"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\"\n        )",
+        "peekOfCode": "def get_gif_urls(url:str, messageList: list[str], title: str) -> list[str]:\n    try:\n        options = Options()\n        options.add_argument(\"--no-sandbox\")\n        options.add_argument(\"--window-size=1800,1000\")\n        options.add_argument(\"disable-blink-features=AutomationControlled\")\n        options.add_argument(\n            \"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\"\n        )\n        options.headless = True",
         "detail": "community",
         "documentation": {}
     },
@@ -358,7 +365,7 @@
         "kind": 5,
         "importPath": "community",
         "description": "community",
-        "peekOfCode": "current_directory = os.path.dirname(os.path.abspath(__file__))\ndef get_absolute_path(file_path):\n    return os.path.join(current_directory, file_path)\ndef change_path(img_path):\n    n = np.fromfile(get_absolute_path(img_path), np.uint8)\n    return [cv2.imdecode(n, cv2.IMREAD_GRAYSCALE), img_path]\ndef find_position_by_image(img_path, max_attempts=10):\n    print(img_path, \"1\")\n    [byte_path, img_path] = img_path\n    print(byte_path)",
+        "peekOfCode": "current_directory = os.path.dirname(os.path.abspath(__file__))\ndef get_absolute_path(file_path):\n    return os.path.join(current_directory, file_path)\ndef change_path(img_path):\n    n = np.fromfile(get_absolute_path(img_path), np.uint8)\n    return [cv2.imdecode(n, cv2.IMREAD_GRAYSCALE), img_path]\ndef find_position_by_image(img_path, max_attempts=10):\n    current_attempt = 0\n    # 대기 시간 설정 (초)\n    wait_time = 2",
         "detail": "community",
         "documentation": {}
     },
@@ -448,16 +455,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class App(customtkinter.CTk):\n    def __init__(self):\n        super().__init__()\n        self.message = \"\"\"\n    안녕하세요 지치신 사장님 위해서 \n    연락드렸습니다.\n    대화한번 해보시죠\n    텔@ssrr119 연락주세요\n                \"\"\"\n        self.title(\"악마의 게임\")",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "bring_to_front",
-        "kind": 2,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "def bring_to_front(window_title):\n    def enum_windows_callback(hwnd, titles):\n        if win32gui.IsWindowVisible(hwnd) and window_title in win32gui.GetWindowText(\n            hwnd\n        ):\n            titles.append(hwnd)\n    titles = []\n    win32gui.EnumWindows(enum_windows_callback, titles)\n    if titles:\n        hwnd = titles[0]  # 가장 첫 번째 찾은 윈도우의 핸들을 가져옵니다.",
+        "peekOfCode": "class App(customtkinter.CTk):\n    def __init__(self):\n        super().__init__()\n        self.message = \"\"\" \"\"\"\n        self.title(\"악마의 게임\")\n        self.geometry(\"560x780\")\n        self.login_button = customtkinter.CTkButton(\n            master=self,\n            corner_radius=0,\n            height=40,",
         "detail": "main",
         "documentation": {}
     },

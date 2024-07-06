@@ -1,6 +1,4 @@
 import os, openpyxl, time
-import win32com.client
-import pythoncom
 import pandas as pd
 
 current_directory = os.path.dirname(os.path.abspath(__file__))

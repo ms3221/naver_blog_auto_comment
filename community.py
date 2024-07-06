@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 import time, os, sys, cv2
 import pyautogui
 
@@ -22,10 +23,7 @@ def change_path(img_path):
 
 
 def find_position_by_image(img_path, max_attempts=10):
-    print(img_path, "1")
-    [byte_path, img_path] = img_path
-    print(byte_path)
-
+   
     current_attempt = 0
 
     # 대기 시간 설정 (초)
@@ -55,8 +53,8 @@ def find_position_by_image(img_path, max_attempts=10):
     print("지정된 횟수 내에 이미지를 찾지 못했습니다.")
 
 
-def get_gif_urls() -> list[str]:
-    print("here ")
+def get_gif_urls(url:str, messageList: list[str], title: str) -> list[str]:
+    
 
     try:
         options = Options()
@@ -66,60 +64,71 @@ def get_gif_urls() -> list[str]:
         options.add_argument(
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
         )
+        options.headless = True
         options.add_experimental_option("debuggerAddress", "localhost:9222")
 
         driver = webdriver.Chrome(options=options)
 
-        driver.get("https://gall.dcinside.com/board/write/?id=sh_new")
+        driver.get('https://gall.dcinside.com/board/lists?id=sh_new')
         driver.maximize_window()
         # 일정 시간동안 대기 (예: 2초)
+       
         time.sleep(5)
+
+        write_btn = driver.find_element(By.CSS_SELECTOR, "#container > section.left_content > article:nth-child(3) > div.list_array_option.clear > div.right_box > div > div.switch_btnbox")
+        write_btn.click()
+
+        time.sleep(2)
 
         input_element = driver.find_element(By.CSS_SELECTOR, "#password")
         input_element.send_keys("1234")
-        time.sleep(5)
-
-        title_input = driver.find_element(By.CSS_SELECTOR, "#subject")
-        title_input.send_keys("이거 맞나?")
-
-        time.sleep(5)
-
-        iframe = driver.find_element(By.ID, "tx_canvas_wysiwyg")
-        driver.switch_to.frame(iframe)
-        texts = [
-            "❤️첫충전 입금 PLUS❤️",
-            "5+2 10+3 20+4 or 10%",
-            "📌 스포츠 / 미니게임 / 카지노 (미니게임 다수보유)",
-            "📌스포츠.카지노.미니게임 롤링 100% 입니다",
-            "📌1회 최대환전 4000만원",
-            "📌1시간 텀으로 환전가능 합니다",
-            "📌블랙승인ok",
-            "📌환전사고 절대 X / 승전 x",
-            "📌-실시간연승 이벤트/게시판 작성 이벤트/출석 이벤트/다폴더 이벤트/삼치기 연승 이벤트",
-            "📌-루틴.마틴.양빵.밸런스o/찍먹o/삼치기o/충환전 5분컷",
-            "",
-            "✅-롤링-✅",
-            "[스포츠.카지노.미니게임  롤링100%]첫충시: 스포츠100%/ 미니게임.카지노300%",
-            "",
-            "가입문의",
-            "@ssrr119",
-        ]
-        script = """
-var texts = arguments[0];
-texts.forEach(function(text) {
-    var p = document.createElement('p');
-    p.textContent = text;
-    document.body.appendChild(p);
-});
-"""
-        driver.execute_script(script, texts)
-        driver.switch_to.default_content()
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(2)
 
-        button = find_position_by_image(change_path("image/submit.png"))
-        pyautogui.moveTo(button["x"], button["y"], 1)
-        pyautogui.click(button["x"], button["y"])
+        title_input = driver.find_element(By.CSS_SELECTOR, "#subject")
+        title_input.send_keys(title)
+
+        time.sleep(2)
+
+        pyautogui.click(1298, 798)
+
+        time.sleep(10)
+
+        pyautogui.scroll(-10000)
+
+        # iframe = driver.find_element(By.ID, "tx_canvas_wysiwyg")
+        # driver.switch_to.frame(iframe)
+        # iframe.click()
+
+        
+        script = """
+var messageList = arguments[0];
+messageList.forEach(function(text) {
+    if (text === "") {
+        // 빈 문자열일 경우 <br> 태그를 생성하여 문서에 추가합니다.
+        var br = document.createElement('br');
+        document.body.appendChild(br);
+    } else {
+        // 빈 문자열이 아닐 경우 <p> 태그를 생성하여 문서에 추가합니다.
+        var p = document.createElement('p');
+        p.textContent = text;
+        document.body.appendChild(p);
+    }
+});
+"""
+        # driver.execute_script(script, messageList)
+#         driver.switch_to.default_content()
+#         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(10)
+
+        # button = find_position_by_image("image/a.png")
+        # pyautogui.moveTo(button["x"], button["y"], 1)
+        pyautogui.click( 1298, 798)
+
+      
+        # save_btn = driver.find_element(By.CSS_SELECTOR, "#write > div.btn_box.write.fr > button.btn_blue.btn_svc.write")
+        # driver.execute_script("arguments[0].click();", save_btn)
+        
+
         time.sleep(3)
 
         # 4가지 행동을 해야함
