@@ -114,7 +114,7 @@ class App(customtkinter.CTk):
             urls = self.url_box.get("1.0", "end-1c")
             urlList = urls.split('\n')
             title = self.title_entry.get()      
-            get_gif_urls(key,message, title)
+            get_gif_urls(message, title)
 
             
         except Exception as e: 
