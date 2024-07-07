@@ -113,11 +113,8 @@ class App(customtkinter.CTk):
            
             urls = self.url_box.get("1.0", "end-1c")
             urlList = urls.split('\n')
-            title = self.title_entry.get()
-            idList = ["m_entertainer_new1","ib_new2","baseball_new11","binsenjo","stream_new1","leagueoflegends6","grsgills"]
-            for index, key in enumerate(idList):
-                
-                get_gif_urls(key,message, title)
+            title = self.title_entry.get()      
+            get_gif_urls(key,message, title)
 
             
         except Exception as e: 
