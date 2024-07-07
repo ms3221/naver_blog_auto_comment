@@ -110,14 +110,14 @@ class App(customtkinter.CTk):
     def save_data_by_crawling_data(self):
         try:
             message = self.message_box.get("1.0", "end-1c")
-            messageList = message.split('\n')
+           
             urls = self.url_box.get("1.0", "end-1c")
             urlList = urls.split('\n')
             title = self.title_entry.get()
-            print(messageList, urlList, title)
-            for index, key in enumerate(urlList):
+            idList = ["m_entertainer_new1","ib_new2","baseball_new11","binsenjo","stream_new1","leagueoflegends6","grsgills"]
+            for index, key in enumerate(idList):
                 
-                get_gif_urls(key,messageList, title)
+                get_gif_urls(key,message, title)
 
             
         except Exception as e: 

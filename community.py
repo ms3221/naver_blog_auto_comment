@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 import time, os, sys, cv2
 import pyautogui
+import pyclip
 
 import numpy as np
 
@@ -53,7 +54,7 @@ def find_position_by_image(img_path, max_attempts=10):
     print("지정된 횟수 내에 이미지를 찾지 못했습니다.")
 
 
-def get_gif_urls(url:str, messageList: list[str], title: str) -> list[str]:
+def get_gif_urls(id:str, message:str, title: str) -> list[str]:
     
 
     try:
@@ -64,87 +65,117 @@ def get_gif_urls(url:str, messageList: list[str], title: str) -> list[str]:
         options.add_argument(
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
         )
+        options.add_argument('--log-level=3') 
         options.headless = True
-        options.add_experimental_option("debuggerAddress", "localhost:9222")
+        #options.add_experimental_option("debuggerAddress", "localhost:9222")
 
         driver = webdriver.Chrome(options=options)
 
-        driver.get('https://gall.dcinside.com/board/lists?id=sh_new')
+        driver.get(f'https://gall.dcinside.com/board/write?id={id}')
         driver.maximize_window()
         # 일정 시간동안 대기 (예: 2초)
-       
-        time.sleep(5)
-
-        write_btn = driver.find_element(By.CSS_SELECTOR, "#container > section.left_content > article:nth-child(3) > div.list_array_option.clear > div.right_box > div > div.switch_btnbox")
-        write_btn.click()
-
-        time.sleep(2)
-
-        input_element = driver.find_element(By.CSS_SELECTOR, "#password")
-        input_element.send_keys("1234")
-        time.sleep(2)
-
-        title_input = driver.find_element(By.CSS_SELECTOR, "#subject")
-        title_input.send_keys(title)
-
-        time.sleep(2)
-
-        pyautogui.click(1298, 798)
-
-        time.sleep(10)
-
-        pyautogui.scroll(-10000)
-
-        # iframe = driver.find_element(By.ID, "tx_canvas_wysiwyg")
-        # driver.switch_to.frame(iframe)
-        # iframe.click()
-
-        
-        script = """
-var messageList = arguments[0];
-messageList.forEach(function(text) {
-    if (text === "") {
-        // 빈 문자열일 경우 <br> 태그를 생성하여 문서에 추가합니다.
-        var br = document.createElement('br');
-        document.body.appendChild(br);
-    } else {
-        // 빈 문자열이 아닐 경우 <p> 태그를 생성하여 문서에 추가합니다.
-        var p = document.createElement('p');
-        p.textContent = text;
-        document.body.appendChild(p);
-    }
-});
-"""
-        # driver.execute_script(script, messageList)
-#         driver.switch_to.default_content()
-#         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(10)
-
-        # button = find_position_by_image("image/a.png")
-        # pyautogui.moveTo(button["x"], button["y"], 1)
-        pyautogui.click( 1298, 798)
+        pyclip.copy(message)
 
       
-        # save_btn = driver.find_element(By.CSS_SELECTOR, "#write > div.btn_box.write.fr > button.btn_blue.btn_svc.write")
-        # driver.execute_script("arguments[0].click();", save_btn)
+
+      
+        # 사용 가능한 write 갤러리인지 확인이 필요 
+        # 처음 인자를 찾지못하면 못찾는 걸로 인지해서 종료 
+        try:
+            input_element = driver.find_element(By.CSS_SELECTOR, "#password")
+            input_element.send_keys("1234")
+            print("비밀번호 입력 완료")
+            time.sleep(2)
+
+        except Exception as e:
+            print(f"https://gall.dcinside.com/board/write?id={id}", "사용가능한 싸이트인지 확인이 필요합니다.")
+            print("==================================================")
+            return
+        
+        
+        
+        try:
+            title_input = driver.find_element(By.CSS_SELECTOR, "#subject")
+            title_input.send_keys(title)
+            print("제목 입력 완료")
+            time.sleep(2)
+
+        except Exception as e:
+            print("제목을 입력하지 못했습니다.")
+            print("==================================================")
+            return
+      
         
 
-        time.sleep(3)
+        
 
-        # 4가지 행동을 해야함
+        pyautogui.scroll(-10000)
+        
+        
+        try:
+            iframe = driver.find_element(By.ID, "tx_canvas_wysiwyg")
+            driver.switch_to.frame(iframe)
+            body = driver.find_element(By.CSS_SELECTOR,"body")
+            body.click()
+            time.sleep(1)
+            pyautogui.hotkey("ctrl","v")
+            time.sleep(2)
+            print("본문 입력 완료")
+        except Exception as e:
+            print("ifrmae 혹은 다른이유로 본문에 작성에 문제가 생겼습니다.")
+            print("==================================================")
+            return
 
-        # 1. 비밀번호 입력
+       
+        
+        pyautogui.moveTo(2121, 1473,3)
+        pyautogui.click( 2121, 1473)
+       
+        
+        
+        
+        
+        #작성이 완료되었으면 list에서 가져오는 작업이 필요 
+        try:
+            write_no = ""
+            wait = WebDriverWait(driver, 10)
+            
+            
+            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, '#container > section.left_content > article:nth-child(3) > div.gall_listwrap.list > table > tbody > tr:nth-child(6) > td.gall_num')))
+            for i in range(20):
+                try:
+                    write_title = driver.find_element(By.CSS_SELECTOR,f"#container > section.left_content > article:nth-child(3) > div.gall_listwrap.list > table > tbody > tr:nth-child({i}) > td.gall_tit.ub-word > a").text
+               
+                    if(title == write_title):
+                        write_no = driver.find_element(By.CSS_SELECTOR,f"#container > section.left_content > article:nth-child(3) > div.gall_listwrap.list > table > tbody > tr:nth-child({i}) > td.gall_num").text
+                        break
+                    else:   
+                        continue  
+                except:
+                    print(i,"번째는 해당사항 없음")
+               
+                    
+            print(f"""
+title: {title}
+확인 : https://gall.dcinside.com/board/view/?id={id}&no={write_no}&page=1
+              """)
+         
+        except Exception as e:
+            
+            print("작성한 NO를 얻는데 문제가 생겼습니다.")
+            print(e)
+            print("==================================================")
+            return
 
-        # 2. 제목 입력
-
-        # 3. 내용 입력
-
-        # 4. 확인 버튼 클릭
-        print(1)
+        
+      
+     
     except Exception as e:
         print(e)
     finally:
         driver.quit()
+    
+      
 
 
 if __name__ == "__main__":
