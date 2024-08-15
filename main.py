@@ -114,6 +114,7 @@ class App(customtkinter.CTk):
             messageList = message.split('\n')
             title = self.title_entry.get()   
             best_list = get_best_community_id_list()
+            print(best_list)
             for url in best_list:
                 try:
                     get_gif_urls(url, message, title)

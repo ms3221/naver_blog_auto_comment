@@ -131,6 +131,15 @@
         "documentation": {}
     },
     {
+        "label": "pyclip",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyclip",
+        "description": "pyclip",
+        "detail": "pyclip",
+        "documentation": {}
+    },
+    {
         "label": "messagebox",
         "importPath": "tkinter",
         "description": "tkinter",
@@ -307,6 +316,14 @@
         "documentation": {}
     },
     {
+        "label": "get_best_community_id_list",
+        "importPath": "community",
+        "description": "community",
+        "isExtraImport": true,
+        "detail": "community",
+        "documentation": {}
+    },
+    {
         "label": "pyperclip",
         "kind": 6,
         "isExtraImport": true,
@@ -356,7 +373,16 @@
         "kind": 2,
         "importPath": "community",
         "description": "community",
-        "peekOfCode": "def get_gif_urls(url:str, messageList: list[str], title: str) -> list[str]:\n    try:\n        options = Options()\n        options.add_argument(\"--no-sandbox\")\n        options.add_argument(\"--window-size=1800,1000\")\n        options.add_argument(\"disable-blink-features=AutomationControlled\")\n        options.add_argument(\n            \"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\"\n        )\n        options.headless = True",
+        "peekOfCode": "def get_gif_urls(url:str,  message:str, title: str) -> list[str]:\n    try:\n        options = Options()\n        options.add_argument(\"--no-sandbox\")\n        options.add_argument(\"--window-size=1800,1000\")\n        options.add_argument(\"disable-blink-features=AutomationControlled\")\n        options.add_argument(\n            \"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\"\n        )\n        options.add_argument('--log-level=3') ",
+        "detail": "community",
+        "documentation": {}
+    },
+    {
+        "label": "get_best_community_id_list",
+        "kind": 2,
+        "importPath": "community",
+        "description": "community",
+        "peekOfCode": "def get_best_community_id_list():\n    try:\n            options = Options()\n            options.add_argument(\"--no-sandbox\")\n            options.add_argument(\"--window-size=1800,1000\")\n            options.add_argument(\"disable-blink-features=AutomationControlled\")\n            options.add_argument(\n                \"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36\"\n            )\n            options.headless = True",
         "detail": "community",
         "documentation": {}
     },

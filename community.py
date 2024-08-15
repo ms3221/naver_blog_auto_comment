@@ -136,12 +136,17 @@ def get_gif_urls(url:str,  message:str, title: str) -> list[str]:
             print("==================================================")
             return
 
-            
-        driver.switch_to.default_content()
-        pyautogui.moveTo(1412, 859,3)
-        btn = driver.find_element(By.CSS_SELECTOR,"#write > div.btn_box.write.fr > button.btn_blue.btn_svc.write")
-        btn.click()
-        #pyautogui.click( 1412, 859)
+        try:    
+            driver.switch_to.default_content()
+            pyautogui.moveTo(1412, 859,3)
+            #btn = driver.find_element(By.CSS_SELECTOR,"#write > div.btn_box.write.fr > button.btn_blue.btn_svc.write")
+            #btn.click()
+            time.sleep(3)
+            pyautogui.click(1412, 859)
+        except Exception as e :
+            print(e, "버튼클릭시 오류가 발생")
+
+     
     
                 
                 
@@ -164,10 +169,11 @@ def get_gif_urls(url:str,  message:str, title: str) -> list[str]:
                 except:
                     print(i,"번째는 해당사항 없음")
                     
+                    
                             
             print(f"""
     title: {title}
-    확인 : https://gall.dcinside.com/board/view/?id={id}&no={write_no}&page=1
+    확인 :  {url.replace("lists","view")}&no={write_no}&page=1
                 """)
                 
         except Exception as e:
