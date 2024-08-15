@@ -11,7 +11,7 @@ from excel import excel_export, get_absolute_path, excel_read
 from crawl_site import get_crawling_site, site_login
 from datetime import datetime
 from tkinter import messagebox
-from community import get_gif_urls
+from community import get_gif_urls, get_best_community_id_list
 
 
 class App(customtkinter.CTk):
@@ -32,7 +32,7 @@ class App(customtkinter.CTk):
             text="글 작성하기",
             text_color=("gray10", "gray90"),
             hover_color=("gray70", "gray30"),
-            command=self.save_data_by_crawling_data,
+            command=self.write_spam_in_com,
         )
         self.login_button.grid(row=6, column=0, sticky="w", padx=10, pady=(10, 0))
         self.upload_button = customtkinter.CTkButton(
@@ -107,14 +107,20 @@ class App(customtkinter.CTk):
 
     # for문을 돌려서 껏다켯다 하지말고 하나 띄어놓고
     # 계속해서 문자를 보내는 형태로 진행한다.
-    def save_data_by_crawling_data(self):
+    def write_spam_in_com(self):
         try:
             message = self.message_box.get("1.0", "end-1c")
-           
-            urls = self.url_box.get("1.0", "end-1c")
-            urlList = urls.split('\n')
-            title = self.title_entry.get()      
-            get_gif_urls(message, title)
+            #urls = self.url_box.get("1.0", "end-1c")
+            messageList = message.split('\n')
+            title = self.title_entry.get()   
+            best_list = get_best_community_id_list()
+            for url in best_list:
+                try:
+                    get_gif_urls(url, message, title)
+                except Exception as e:
+                    print(e)
+                    print(f"{url} 등록에 문제가 있습니다.")
+                
 
             
         except Exception as e: 
@@ -159,3 +165,5 @@ if __name__ == "__main__":
     
     check_single_instance()
    
+
+
